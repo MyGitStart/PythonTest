@@ -26,4 +26,4 @@
 print list("hello")
 name = [1, 23, 4]
 del name[1:2]
-print name
+print list(reversed([1, 2, 3]))
