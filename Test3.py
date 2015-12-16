@@ -35,3 +35,5 @@ print '所有可打印的字符：' + (string.printable)  # 所有可打印字�
 print (string.punctuation)  # 包含所有标点的字符串
 title = '我'
 print len(title)
+print '%09.5f' % (234.123)
+print '%04d' % 10
