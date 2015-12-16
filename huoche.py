@@ -11,17 +11,17 @@ from splinter.browser import Browser
 ###容错做的不好，考虑的情况也不够多，大家见谅
 
 # 用户名，密码
-username = u"改成用户名"
-passwd = u"改成用户名"
-# cookies值得自己去找, 下面两个分别是上海, 营口东
-starts = u"%u4E0A%u6D77%2CSHH"
-ends = u"%u8425%u53E3%u4E1C%2CYGT"
+username = u"用户名"
+passwd = u"密码"
+# cookies值得自己去找, 下面两个分别是北京, 周口
+starts = u"%u5317%u4EAC%2CBJP"
+ends = u"%u5468%u53E3%u4E1C%2CZKN"
 # 时间格式2016-01-31
-dtime = u"2016-02-01"
+dtime = u"2016-02-03"
 # 车次，选择第几趟，0则从上之下依次点击
 order = 0
 ###乘客名
-pa = u"改成乘客姓名"
+pa = u"乘客名"
 
 """网址"""
 ticket_url = "https://kyfw.12306.cn/otn/leftTicket/init"

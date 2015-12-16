@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 base = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
-
+# noinspection PyInterpreter
 def dec2bin(string_num):
     num = int(string_num)
     mid = []
