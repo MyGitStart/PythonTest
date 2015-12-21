@@ -11,17 +11,17 @@ from splinter.browser import Browser
 ###容错做的不好，考虑的情况也不够多，大家见谅
 
 # 用户名，密码
-username = u"用户名"
-passwd = u"密码"
+username = u"******"
+passwd = u"*******"
 # cookies值得自己去找, 下面两个分别是北京, 周口
-starts = u"%u5317%u4EAC%2CBJP"
-ends = u"%u5468%u53E3%u4E1C%2CZKN"
+starts = u"%u77F3%u5BB6%25E84%2CSJP"
+ends = u"%u5317%u4EAC%2CBJP"
 # 时间格式2016-01-31
-dtime = u"2016-02-03"
+dtime = u"2016-02-14"
 # 车次，选择第几趟，0则从上之下依次点击
 order = 0
 ###乘客名
-pa = u"乘客名"
+pa = u"****"
 
 """网址"""
 ticket_url = "https://kyfw.12306.cn/otn/leftTicket/init"
@@ -46,7 +46,7 @@ def login():
 
 def huoche():
     global b
-    b = Browser(driver_name="chrome")
+    b = Browser()#driver_name="chrome"
     b.visit(ticket_url)
 
     while b.is_text_present(u"登录"):
@@ -94,7 +94,10 @@ def huoche():
                     print u"还没开始预订"
                     continue
         sleep(1)
-        b.find_by_text(pa)[1].click()
+        #b.find_by_text(u"更多").click()
+        #sleep(1)
+        #for i in range(len(pa)):
+        b.find_by_text(pa[i])[1].click()
         print  u"能做的都做了.....不再对浏览器进行任何操作"
     except Exception as e:
         print(traceback.print_exc())
