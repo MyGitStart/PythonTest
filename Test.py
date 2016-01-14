@@ -1,30 +1,39 @@
 # -*-coding: utf-8 -*-
+from datetime import datetime
+def isrunnian(stryear):
+    if stryear%400==0 or (stryear%4==0 and stryear%100!=0):
+        return True
+    else:
+        return False
 
-class Human(object):
-    laugh='哈哈'
-    # Man_genter='男'
-    def __init__(self):
-        print self.laugh+'初始化'
-    def __init__(self,input_gender):
-        self.Man_genter=input_gender
-    def Show_laugh(self):
-        print self.laugh
-    def laugh_100th(self):
-        for i in range(2):
-            self.Show_laugh()
-class superList(list):
-    def __sub__(self,b):
-        a=self[:]
-        b=b[:]
-        while len(b)>0:
-            element_b=b.pop()
-            if element_b in a:
-                a.remove(element_b)
-        return a
 
-liu=Human('女')
-print liu.Man_genter
-mm=Human('男')
-print mm.Man_genter
-mm.laugh_100th()
-print superList([1,2,3])-superList([3,4])
+def datecount(strdate):
+    count=0
+    m2=0
+    try:
+        date_time=datetime.strptime(strdate,'%Y-%m-%d')
+        strday = date_time.weekday()
+        if isrunnian(date_time.year):
+            m2=29
+        else:
+            m2=28
+        for x in range(0,date_time.month):
+            if x in days:
+                count+=31
+            elif x==2:
+                count+=m2
+            else:
+                count+=30
+        count+=date_time.day
+        return count,week_day_dict[strday+1]
+    except:
+        return count
+
+week_day_dict = {1 : '星期一',2 : '星期二',3 : '星期三',4 : '星期四',5 : '星期五',6 : '星期六',7 : '星期天'}
+
+
+days=(1,3,5,7,8,10,12)
+
+temp=input("输入日期：")
+print (datecount(temp))
+
